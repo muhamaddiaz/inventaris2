@@ -1,0 +1,65 @@
+.faded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.ov-top {
+    margin-top: -50px;
+    border-radius: 5px;
+}
+
+.ov-top-ct {
+    margin-top: -25px;
+    border-radius: 5px;
+}
+
+.main-wp {
+    background-image: url(main-wp.jpg);
+    background-attachment: fixed;
+}
+
+.content-3 {
+    padding: 50px;
+}
+
+/* Login Stylesheet */
+
+.back-ct {
+    height: 100vh;
+    background-image: url(main-wp.jpg);
+}
+
+.faded-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 123, 255, .8);
+}
+
+.faded-signup {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(220, 53, 69, .8);
+}
+
+.login {
+    
+}
+
+.text-login {
+    opacity: .8;
+}
+
+.login-box {
+    background-color: white;
+    border-radius: 5px;
+    padding: 30px 80px;
+}
