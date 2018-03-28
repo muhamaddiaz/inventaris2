@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./assets/assets.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
 </head>
@@ -21,33 +23,43 @@
             </div>
             <div class="login">
                 <div class="login-box">
-                    <form action="./signup-process.php" method="post">
+                    <form action="signup-process.php" method="post" onsubmit="return validate()">
                         <div class="form-group">
+                            <p id="e_spot2" class="text-danger"></p>
                             <label for="fullname">Nama Lengkap: </label>
-                            <input type="text" class="form-control" name="fullname" />
+                            <input id="fullname" type="text" class="form-control" name="fullname" />
                         </div>
                         <div class="form-group">
+                            <p id="e_spot3" class="text-danger"></p>
                             <label for="username">Nama Pengguna: </label>
-                            <input type="text" class="form-control" name="username" />
+                            <input id="username" type="text" class="form-control" name="username" />
                         </div>
                         <div class="form-group">
+                            <p id="e_spot4" class="text-danger"></p>
                             <label for="address">Alamat: </label>
-                            <input type="text" class="form-control" name="address" />
+                            <input id="address" type="text" class="form-control" name="address" />
                         </div>
                         <div class="form-group">
+                            <p id="e_spot5" class="text-danger"></p>
                             <label for="phone">No Telp: </label>
-                            <input type="number" class="form-control" name="phone" />
+                            <input id="phone" type="number" class="form-control" name="phone" />
                         </div>
                         <div class="form-group">
+                            <p id="e_spot6" class="text-danger"></p>
                             <label for="password">Kata Sandi:  </label>
-                            <input type="password" class="form-control" />
+                            <input id="password" type="password" class="form-control" name="password" />
                         </div>
-                        <label><input type="checkbox" /> Setuju dengan <a href="#">informasi & kebijakan</a></label>
                         <button class="btn btn-danger btn-block" type="submit">Daftar</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <?php 
+        if(isset($_SESSION['alert'])) {
+            echo $_SESSION['alert'];
+            unset($_SESSION['alert']);
+        }
+    ?>
 </body>
 </html>
