@@ -50,10 +50,6 @@
     background-color: rgba(220, 53, 69, .8);
 }
 
-.login {
-    
-}
-
 .text-login {
     opacity: .8;
 }
@@ -62,4 +58,18 @@
     background-color: white;
     border-radius: 5px;
     padding: 30px 80px;
+}
+
+/* main */
+
+.ct-top {
+    padding: 0;
+    background-image: url(main-wp1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.faded-main {
+    padding: 150px 50px;
+    background-color: rgba(0, 0, 0, .5);
 }

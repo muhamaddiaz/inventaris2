@@ -84,3 +84,44 @@ function validate3() {
     }
     return true;
 }
+
+function validate4() {
+    let a = $('#nama_barang');
+    let b = $('#tanggal_pembelian');
+    let c = $('#jumlah_barang');
+    let e_a = $('#e_spot2');
+    let e_b = $('#e_spot3');
+    let e_c = $('#e_spot4');
+    let error = 0;
+    if(a.val() == '') {
+        e_a.text('* nama barang tidak boleh kosong');
+        error++;
+    } else {
+        e_a.text('');
+    }
+    if(b.val() == '') {
+        e_b.text('* tanggal pembelian tidak boleh kosong');
+        error++;
+    } else {
+        e_b.text('');
+    }
+    if(c.val() == '') {
+        e_c.text('* jumlah barang tidak boleh kosong');
+        error++;
+    } else {
+        e_c.text('');
+    }
+    
+    if(error != 0) {
+        return false;
+    }
+    return true;
+}
+
+function delete_validate() {
+    if(confirm('Apa anda yakin? ')) {
+        return true;
+    } else {
+        return false;
+    }
+}

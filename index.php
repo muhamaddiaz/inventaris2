@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    if(isset($_SESSION['id_user'])) {
+        header('Location: '. 'http://localhost/inventaris/main.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +21,8 @@
 </head>
 <body>
     <div class="navbar navbar-expand-md bg-danger fixed-top navbar-dark">
-        <a class="navbar-brand" href="#">Inventaris</a>
+        <a class="navbar-brand" href="#">Inventaris Web</a>
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="./login.php">Login</a>
             </li>
