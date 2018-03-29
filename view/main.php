@@ -10,9 +10,6 @@
     $sqluser = "SELECT * FROM user WHERE id_user=$id_user";
     $result = $conn->query($sqluser);
     $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    $sqluser = "SELECT COUNT(*) AS total FROM user WHERE id_user=$id_user";
-    $result = $conn->query($sqluser);
-    $count = mysqli_fetch_array($result, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,20 +52,6 @@
         <div class="faded-main">
             <h1 class="display-3">Welcome back, <?php echo $user['username'] ?></h1>
             <p>Pencatatan setiap data inventaris yang masuk</p>
-            <p>Jumlah barang inventaris: <?php echo $count['total'] ?></p>
-            <!--<div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
-                        <div class="input-group">
-                            <input type="search" class="form-control" name="search" placeholder="Search ID" />
-                            <span class="input-group-btn">
-                                <input class="btn btn-success" type="submit" value="Go" />
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>-->
         </div>
     </div>
     <div class="container-fluid">
@@ -86,8 +69,11 @@
                     if($result->num_rows > 0) {
                         echo "<table class='table table-bordered text-center'>";
                         echo "<tr class='thead-dark'>
-                        <th>ID Inventaris</th>
-                        <th>Nama Barang</th>
+                        <th>ID Inventaris</th>";
+                        if($user['admin'] == 1) {
+                            echo "<th>Nama inventor</th>";
+                        }
+                        echo "<th>Nama Barang</th>
                         <th>Tanggal Pembelian</th>
                         <th>Kondisi</th>
                         <th>Keterangan</th>
@@ -98,8 +84,15 @@
                         echo "<tr>";
                         while($row = $result->fetch_assoc()) {
                             echo "<tr>
-                            <td>$row[id_inventaris]</td>
-                            <td>$row[nama_barang]</td>
+                            <td>$row[id_inventaris]</td>";
+                            if($user['admin'] == 1) {
+                                $id_inventor = $row['id_user'];
+                                $inventsql = "SELECT * FROM user WHERE id_user=$id_inventor";
+                                $inventor = $conn->query($inventsql);
+                                $result2 = mysqli_fetch_array($inventor, MYSQLI_ASSOC);
+                                echo "<td>" . $result2['fullname'] . "</td>";
+                            }
+                            echo "<td>$row[nama_barang]</td>
                             <td>$row[tanggal_pembelian]</td>
                             <td>$row[kondisi_barang]</td>
                             <td>$row[status_barang]</td>
@@ -162,7 +155,6 @@
                                         <option value="Baru">Baru</option>
                                         <option value="Bekas">Bekas</option>
                                     </select>
-                                    <!--<input id="kondisi" class="form-control" type="number" name="jumlah_barang" placeholder="Jumlah Barang" />-->
                                     <br>
                                     <label for="kondisi_barang">Keterangan: </label>
                                     <select name="kondisi_barang" id="kondisi_barang" class="form-control">
@@ -170,7 +162,6 @@
                                         <option value="Cukup">Cukup</option>
                                         <option value="Kurang baik">Kurang baik</option>
                                     </select>
-                                    <!--<input id="keterangan" class="form-control" type="number" name="jumlah_barang" placeholder="Jumlah Barang" />-->
                                     <br>
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                                     <button type="submit" class="btn btn-primary">Kirim</button>
