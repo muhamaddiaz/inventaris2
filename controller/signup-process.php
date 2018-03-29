@@ -1,9 +1,6 @@
 <?php 
     session_start();
-    $server = 'localhost';
-    $dbuser = 'root';
-    $keypass = '';
-    $dbname = 'inventaris';
+    require '../secret/dbsetting.php';
 
     $fullname = $_POST['fullname'];
     $username = $_POST['username'];
@@ -25,10 +22,10 @@
             $json = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $_SESSION['id_user'] = $json['id_user'];
             $_SESSION['alert'] = "<script>alert('User berhasil terdaftar')</script>";
-            header("Location: ". "http://localhost/inventaris/main.php");
+            header("Location: ". "http://localhost/inventaris/view/main.php");
         }
     } else {
         $_SESSION['alert'] = "<script>alert('User sudah terdaftar')</script>";
-        header("Location: ". "http://localhost/inventaris/signup.php");
+        header("Location: ". "http://localhost/inventaris/view/signup.php");
     }
 ?>

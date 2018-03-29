@@ -1,7 +1,7 @@
 <?php 
     session_start();
     if(isset($_SESSION['id_user'])) {
-        header('Location: '. 'http://localhost/inventaris/main.php');
+        header('Location: '. 'http://localhost/inventaris/view/main.php');
     }
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
         <a class="navbar-brand" href="#">Inventaris Web</a>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="./login.php">Login</a>
+                <a class="nav-link" href="./view/login.php">Login</a>
             </li>
         </ul>
     </div>
@@ -99,7 +99,7 @@
         <div class="content-3 bg-primary text-white text-center">
             <h3 class="display-4">Apa yang kamu tunggu ?</h3>
             <p>Permudah pencatatan data inventaris anda dengan web ini!</p>
-            <a href="./signup.php" class="btn btn-danger">Daftar Sekarang!</a>
+            <a href="./view/signup.php" class="btn btn-danger">Daftar Sekarang!</a>
         </div>
     </div>
 </body>

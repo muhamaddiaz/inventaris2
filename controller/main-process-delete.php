@@ -1,15 +1,12 @@
 <?php 
     session_start();
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "inventaris";
+    require '../secret/dbsetting.php';
     $target = $_POST['id_delete'];
-    $conn = new mysqli($server, $username, $password, $dbname);
+    $conn = new mysqli($server, $dbuser, $keypass, $dbname);
     $sql = "DELETE FROM data_inventaris WHERE id_inventaris=$target";
     if($conn->query($sql) == TRUE) {
         $_SESSION['alert'] = "<script>alert('Data berhasil dihapus!')</script>";
-        header("Location: ". "http://localhost/inventaris/main.php");
+        header("Location: ". "http://localhost/inventaris/view/main.php");
     } else {
         die("Error has been occured: ". $conn->error);
     }
