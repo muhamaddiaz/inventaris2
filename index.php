@@ -20,19 +20,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
 </head>
 <body>
-    <div class="navbar navbar-expand-md bg-danger fixed-top navbar-dark">
-        <a class="navbar-brand" href="#">Inventaris Web</a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="./view/login.php">Login</a>
-            </li>
-        </ul>
-    </div>
     <div class="container-fluid main-wp" style="padding: 0;">
         <div class="faded text-center">
             <div class="top-text text-white">
                 <h2 class="display-3">Inventaris Web</h2>
                 <p>Catat setiap data inventaris anda</p> 
+                <a class="btn btn-outline-primary" href="./view/login.php">Login sekarang!</a>
             </div>
         </div>
     </div>
