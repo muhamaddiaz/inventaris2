@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2018 at 10:41 AM
+-- Generation Time: Apr 02, 2018 at 12:42 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -44,11 +44,6 @@ CREATE TABLE `data_inventaris` (
 --
 
 INSERT INTO `data_inventaris` (`id_inventaris`, `id_user`, `nama_barang`, `tanggal_pembelian`, `status_barang`, `kondisi_barang`, `jumlah_barang`, `created_at`) VALUES
-(10, 15, 'Komputer', '2018-12-28', 'Baru', 'Baik', 37, '2018-03-28 12:23:29'),
-(11, 21, 'Kasur Royal', '2018-03-07', 'Baru', 'Baik', 1, '2018-03-28 14:57:38'),
-(12, 22, 'Kursi Ikea', '2018-03-02', 'Baru', 'Baik', 5, '2018-03-28 15:26:45'),
-(13, 23, 'Komputer Lenovo', '2018-12-28', 'Baru', 'Baik', 37, '2018-03-28 16:19:02'),
-(14, 15, 'Kursi Ikea', '2015-12-29', 'Baru', 'Baik', 12, '2018-03-29 08:15:02'),
 (15, 15, 'Komputer Lenovo', '2013-11-26', 'Bekas', 'Kurang baik', 5, '2018-03-29 08:15:40');
 
 -- --------------------------------------------------------
@@ -72,11 +67,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `fullname`, `username`, `address`, `phone_number`, `password`, `admin`) VALUES
-(15, 'Muhamad Diaz R', 'diazram', 'PBB A11', '087721921992', 'kool', 1),
-(21, 'Muhamad Diaz R', 'diazram2', 'PBB A11', '2', 'hello', 0),
-(22, 'Sergio Ramos', 'ramos', 'Telkom university', '085711293304', 'hello', 0),
-(23, 'Samsul ', 'samss', 'PBB A11', '089122345567', 'hello', 0),
-(24, 'Gaston', 'ton', 'PBB A11', '087721921992', 'hello', 0);
+(15, 'Muhamad Diaz R', 'diazram', 'PBB A11', '087721921992', 'helloworld', 1),
+(16, 'Steven Carlos', 'steven', 'PBB A11', '085711953304', 'ÿÉ½øw¤„z', 0);
 
 --
 -- Indexes for dumped tables
@@ -109,7 +101,7 @@ ALTER TABLE `data_inventaris`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
